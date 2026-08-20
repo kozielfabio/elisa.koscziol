@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop Being the Option</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--rose:#C8003F;--hot:#FF2D6B;--ink:#09060F;--text:#F7F0F3;--soft:rgba(247,240,243,.68)}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);line-height:1.55;padding-bottom:50px}
+.container{max-width:460px;margin:0 auto;padding:0 18px}
+
+.scarcity-bar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:linear-gradient(90deg,#7A001F,#C8003F);
+  color:#fff;text-align:center;padding:11px 14px;
+  font-size:13.5px;font-weight:600;
+  box-shadow:0 4px 18px rgba(200,0,63,.35);
+}
+.scarcity-bar span{font-weight:700}
+
+.hero{padding:42px 0 8px;text-align:center}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,7vw,36px);font-weight:900;line-height:1.18;margin-bottom:14px}
+.hero h1 em{color:var(--hot);font-style:italic}
+.hero p{font-size:15.5px;color:var(--soft);font-weight:300;max-width:340px;margin:0 auto}
+
+.product-img{width:100%;border-radius:18px;margin:22px 0 6px;border:1px solid rgba(255,255,255,.07)}
+
+.core-promise{
+  background:rgba(200,0,63,.09);
+  border:1px solid rgba(200,0,63,.25);
+  border-radius:16px;
+  padding:18px 16px;
+  margin:20px 0 26px;
+  font-size:15px;
+  line-height:1.55;
+}
+.core-promise strong{color:#fff}
+
+.section{margin:32px 0}
+.section-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;margin-bottom:6px;line-height:1.2}
+.section-title em{color:var(--hot);font-style:italic}
+.section-sub{font-size:14.5px;color:var(--soft);margin-bottom:18px}
+
+.mechanism{
+  background:#0E0A14;
+  border:1px solid rgba(255,45,107,.18);
+  border-radius:16px;
+  padding:18px 16px;
+  margin-bottom:14px;
+}
+.mechanism h3{font-size:15.5px;font-weight:600;margin-bottom:6px;color:#fff}
+.mechanism p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+
+.bonus-grid{display:flex;flex-direction:column;gap:11px}
+.bonus{
+  display:flex;gap:13px;align-items:flex-start;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,45,107,.12);
+  border-radius:14px;padding:15px 15px;
+}
+.bonus-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+.bonus h4{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:3px}
+.bonus p{font-size:13.5px;color:var(--soft);font-weight:300;line-height:1.4}
+
+.price-box{
+  background:linear-gradient(145deg,rgba(200,0,63,.16),rgba(255,45,107,.07));
+  border:1.5px solid rgba(200,0,63,.38);
+  border-radius:20px;
+  padding:26px 20px;
+  text-align:center;
+  margin:30px 0 22px;
+}
+.price-old{font-size:14px;color:rgba(255,255,255,.4);text-decoration:line-through;margin-bottom:2px}
+.price-new{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:#fff;line-height:1;margin:4px 0}
+.price-new small{font-size:22px;color:var(--hot)}
+.price-note{font-size:13.5px;color:var(--soft);margin-top:6px}
+
+.guarantee{
+  text-align:center;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:20px 18px;
+  margin:22px 0;
+}
+.guarantee h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.guarantee p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+
+.warning{
+  background:rgba(200,0,63,.1);
+  border-left:3px solid var(--hot);
+  padding:15px 16px;
+  margin:24px 0;
+  font-size:14.5px;
+  color:rgba(255,210,225,.9);
+  line-height:1.5;
+}
+
+.cta{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--rose),var(--hot));
+  color:#fff;text-align:center;text-decoration:none;
+  font-size:16.5px;font-weight:800;letter-spacing:.2px;
+  padding:20px 20px;border-radius:100px;
+  box-shadow:0 10px 32px rgba(200,0,63,.4);
+  margin:8px 0 6px;
+  position:relative;overflow:hidden;
+}
+.cta::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shine 2.1s infinite}
+@keyframes shine{to{transform:translateX(100%)}}
+.cta-sub{text-align:center;font-size:12.5px;color:rgba(255,255,255,.38);margin-bottom:18px}
+
+.faq{margin:36px 0 20px}
+.faq h3{font-family:'Playfair Display',serif;font-size:21px;text-align:center;margin-bottom:18px}
+.faq-item{margin-bottom:16px}
+.faq-q{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px}
+.faq-a{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+
+.final{text-align:center;font-size:15px;color:rgba(255,200,220,.75);margin:28px 0 10px;line-height:1.55;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="scarcity-bar">
+  ⏳ Special price ends in <span id="timer">11:42</span> — only <span id="spots">14</span> left
+</div>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>You’ve been giving more<br>than you receive.<br><em>That ends now.</em></h1>
+    <p>This isn’t another “be more feminine” course.<br>It’s the exact shift that stops him from treating you like an option.</p>
+  </div>
+
+  <img src="src/img/curso.png" alt="The Chosen Frame" class="product-img">
+
+  <div class="core-promise">
+    Most women try to fix the relationship by giving <strong>more</strong>.<br><br>
+    This method does the opposite: it teaches you how to stop over-investing so he finally feels the need to invest in <strong>you</strong>.
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Why this works when<br><em>“just pull back”</em> doesn’t</h2>
+    <p class="section-sub">Simply going silent or playing hard to get usually backfires. Here’s what actually creates the shift:</p>
+
+    <div class="mechanism">
+      <h3>1. The Over-Investment Loop</h3>
+      <p>You give attention, energy, and emotional availability before he has fully chosen you. This removes the natural tension that makes him pursue.</p>
+    </div>
+    <div class="mechanism">
+      <h3>2. The Emotional Cost Reset</h3>
+      <p>When you stop carrying the relationship alone, the dynamic rebalances. He starts feeling the absence of your constant effort.</p>
+    </div>
+    <div class="mechanism">
+      <h3>3. The Chosen Frame</h3>
+      <p>You stop trying to be chosen and start moving as if you already are. This is what makes him lean in instead of pull away.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">What you receive today</h2>
+    <p class="section-sub">Everything you need to reverse the pattern — without becoming cold or manipulative.</p>
+
+    <div class="bonus-grid">
+      <div class="bonus">
+        <div class="bonus-ico">🔓</div>
+        <div>
+          <h4>The Chosen Frame Method</h4>
+          <p>The core system to stop over-giving and create natural desire and prioritization.</p>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">💬</div>
+        <div>
+          <h4>Texting Without Chasing</h4>
+          <p>Exact message frameworks so you never over-text or seem needy again.</p>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">🧠</div>
+        <div>
+          <h4>How to Read His Real Interest</h4>
+          <p>Spot the difference between genuine care and convenient attention — early.</p>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">🔥</div>
+        <div>
+          <h4>12 Polarity Shifts</h4>
+          <p>Small, practical changes in energy and behavior that make him feel the pull toward you.</p>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">🛡️</div>
+        <div>
+          <h4>The 8 Silent Desire Killers</h4>
+          <p>The common behaviors that quietly push him away (and how to stop them).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-box">
+    <div class="price-old">Private coaching normally costs $197–$297</div>
+    <div class="price-new">$27<small>.00</small></div>
+    <div class="price-note">One-time payment · Instant access · No subscription</div>
+  </div>
+
+  <div class="guarantee">
+    <h3>✅ 30-Day No-Risk Guarantee</h3>
+    <p>Apply the method. If you don’t feel a clear difference in how he responds (or in how you feel about yourself), just email us and get a full refund. No questions asked.</p>
+  </div>
+
+  <div class="warning">
+    If nothing changes, the pattern keeps running.<br>
+    He stays comfortable. You stay uncertain.<br>
+    And the gap between what you give and what you receive only grows.
+  </div>
+
+  <a href="https://pay.hotmart.com/J102282162G" class="cta">
+    YES — I WANT TO STOP BEING THE OPTION
+  </a>
+  <p class="cta-sub">Instant access after payment · Price can disappear when the timer hits zero</p>
+
+  <div class="faq">
+    <h3>Common Questions</h3>
+
+    <div class="faq-item">
+      <div class="faq-q">Will this work if we’re already together?</div>
+      <div class="faq-a">Yes. The method works whether you’re dating, in a relationship, or dealing with distance and inconsistency.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is this about playing games or manipulation?</div>
+      <div class="faq-a">No. It’s about stopping the behaviors that make him take you for granted and rebuilding healthy polarity and self-respect.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How fast do I get access?</div>
+      <div class="faq-a">Immediately after payment. You’ll receive everything by email within a couple of minutes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if it doesn’t work for me?</div>
+      <div class="faq-a">You have 30 full days. If you’re not satisfied, we refund you completely.</div>
+    </div>
+  </div>
+
+  <a href="https://pay.hotmart.com/J102282162G" class="cta">
+    I DON’T WANT TO KEEP GIVING MORE THAN I RECEIVE
+  </a>
+  <p class="cta-sub">This offer is limited and can end at any moment</p>
+
+  <p class="final">
+    You already know the pattern exists.<br>
+    The only real question is whether you’re ready to change your side of it.
+  </p>
+
+</div>
+
+<script>
+let total = 11*60 + 42;
+function tick(){
+  const m = Math.floor(total/60);
+  const s = total%60;
+  document.getElementById('timer').textContent = 
+    m.toString().padStart(2,'0') + ':' + s.toString().padStart(2,'0');
+  if(total>0){total--; setTimeout(tick,1000);}
+}
+tick();
+
+let spots = 14;
+setInterval(()=>{
+  if(spots > 4 && Math.random() > 0.65){
+    spots--;
+    document.getElementById('spots').textContent = spots;
+  }
+}, 32000);
+</script>
+</body>
+</html>

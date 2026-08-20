@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Pattern Diagnosis</title>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1208952827491954');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1208952827491954&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--rose:#C8003F;--hot:#FF3F81;--ink:#0C0612;--text:#FAF1F4;--text-soft:rgba(250,241,244,.58);--text-muted:rgba(250,241,244,.28)}
+html,body{min-height:100%;width:100%}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);display:flex;justify-content:center;padding:0 0 80px;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.4}
+.ambient{position:fixed;top:-140px;left:50%;transform:translateX(-50%);width:700px;height:520px;background:radial-gradient(ellipse,rgba(200,0,63,.22) 0%,transparent 65%);pointer-events:none;z-index:0}
+.wrap{width:100%;max-width:460px;position:relative;z-index:1;padding:0 20px}
+.prog{position:sticky;top:0;z-index:10;background:linear-gradient(to bottom,var(--ink) 80%,transparent);padding:18px 20px 14px;margin:0 -20px}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.prog-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.55);font-weight:700}
+.prog-count{font-size:11px;color:var(--text-muted);font-weight:300}
+.prog-track{height:2px;background:rgba(255,63,129,.08);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--rose),var(--hot));border-radius:100px;transition:width .55s}
+.q-card{display:none;flex-direction:column;gap:16px;padding-top:18px;min-height:calc(100vh - 80px)}
+.q-card.on{display:flex;animation:qin .34s cubic-bezier(.4,0,.2,1)}
+.q-card.out{animation:qout .24s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes qin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes qout{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-24px)}}
+.chip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,63,129,.07);border:1px solid rgba(255,63,129,.16);border-radius:100px;padding:5px 14px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.62);font-weight:700;width:fit-content}
+.cdot{width:5px;height:5px;border-radius:50%;background:var(--hot);box-shadow:0 0 6px rgba(255,63,129,.7);animation:cdpulse 2s infinite}
+@keyframes cdpulse{0%,100%{opacity:1}50%{opacity:.3}}
+.q-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,8.2vw,48px);line-height:1;color:#fff;letter-spacing:.5px}
+.q-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--hot);letter-spacing:0;font-size:.78em;display:block;margin-top:3px}
+.q-sub{font-size:13.5px;font-weight:300;color:var(--text-soft);line-height:1.65;margin-top:-2px}
+.q-sub strong{color:var(--text);font-weight:500}
+.q-quote{border-left:2px solid rgba(255,63,129,.35);padding:10px 14px;font-size:13px;font-weight:300;color:var(--text-soft);line-height:1.6;font-style:italic;margin-top:-2px}
+.q-quote strong{color:rgba(255,63,129,.85);font-weight:500;font-style:normal}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{background:rgba(255,255,255,.022);border:1.5px solid rgba(255,63,129,.12);border-radius:15px;padding:15px 16px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;color:var(--text);cursor:pointer;text-align:left;line-height:1.4;display:flex;align-items:flex-start;gap:11px;position:relative;overflow:hidden;transition:border-color .2s,background .2s,transform .12s}
+.opt:active{transform:scale(.98)}
+.opt.sel{border-color:var(--hot);background:rgba(255,63,129,.09)}
+.opt-ico{font-size:17px;flex-shrink:0;margin-top:1px}
+.opt-text{flex:1}
+.fb{display:none;border-left:2px solid rgba(255,63,129,.45);padding:12px 14px;font-size:13.5px;font-weight:300;color:var(--text-soft);line-height:1.6;animation:fadeUp .28s ease}
+.fb.on{display:block}
+.fb strong{color:#fff;font-weight:500}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.nx{display:none;margin-top:6px}
+.nx.on{display:block;animation:fadeUp .28s ease}
+.nx-btn{width:100%;background:linear-gradient(135deg,var(--rose),var(--hot));border:none;border-radius:100px;padding:18px 28px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;cursor:pointer;position:relative;overflow:hidden}
+.nx-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);animation:shim 1.8s infinite}
+@keyframes shim{to{transform:translateX(100%)}}
+#loading{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:22px;text-align:center;padding:0 4px}
+#loading.on{display:flex;animation:fadeUp .35s ease}
+.load-ico{font-size:52px}
+.load-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,8vw,48px);color:#fff;letter-spacing:.5px;line-height:1}
+.load-title em{font-family:'Playfair Display',serif;font-style:italic;color:var(--hot);font-size:.75em;display:block;margin-top:3px}
+.load-sub{font-size:13.5px;font-weight:300;color:var(--text-soft);line-height:1.6;max-width:290px}
+.an-box{width:100%;background:rgba(255,63,129,.055);border:1px solid rgba(255,63,129,.14);border-radius:16px;padding:18px 18px;display:flex;flex-direction:column;gap:9px;text-align:left}
+.an-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,63,129,.5);font-weight:700}
+.an-track{height:2px;background:rgba(255,63,129,.1);border-radius:100px;overflow:hidden}
+.an-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--rose),var(--hot));border-radius:100px;transition:width .14s linear}
+.an-txt{font-size:13px;color:var(--text-soft);font-weight:300}
+</style>
+</head>
+<body>
+<div class="ambient"></div>
+<div class="wrap">
+<div class="prog" id="prog">
+  <div class="prog-meta">
+    <span class="prog-label">Emotional diagnosis</span>
+    <span class="prog-count" id="pCount">Step 1 of 5</span>
+  </div>
+  <div class="prog-track"><div class="prog-fill" id="pFill" style="width:20%"></div></div>
+</div>
+
+<!-- Q1 -->
+<div class="q-card on" id="q1">
+  <div class="chip"><div class="cdot"></div>The trigger</div>
+  <div class="q-title">When he pulls away…<br><em>has this happened before?</em></div>
+  <p class="q-sub">This isn’t about one man. It’s about the pattern that <strong>keeps repeating</strong>.</p>
+  <div class="q-quote"><strong>"But this time it felt different…"</strong><br>You’ve thought that before. More than once.</div>
+  <div class="opts">
+    <button class="opt" onclick="pick(1,'a','You feel it before you even have proof. That instinct isn’t lying — it’s revealing an old pattern.')">
+      <span class="opt-ico">🔁</span><span class="opt-text">Yes, it’s happened more than once</span>
+    </button>
+    <button class="opt" onclick="pick(1,'b','When it almost always ends the same way, the problem isn’t the man. It’s the dynamic you keep activating.')">
+      <span class="opt-ico">📉</span><span class="opt-text">Yes, it almost always ends the same way</span>
+    </button>
+    <button class="opt" onclick="pick(1,'c','A cycle that keeps coming back is the clearest proof: the change isn’t finding the right man — it’s breaking the pattern.')">
+      <span class="opt-ico">🕳️</span><span class="opt-text">Yes, it feels like a cycle that always returns</span>
+    </button>
+    <button class="opt" onclick="pick(1,'d','The man changes. The ending doesn’t. That has a name. And it has a solution. But first you have to see it.')">
+      <span class="opt-ico">💔</span><span class="opt-text">Yes, the man changes… but the ending stays the same</span>
+    </button>
+  </div>
+  <div class="fb" id="fb1"></div>
+  <div class="nx" id="nx1"><button class="nx-btn" onclick="next(2)">Continue →</button></div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="q2">
+  <div class="chip"><div class="cdot"></div>The reaction</div>
+  <div class="q-title">When he goes silent…<br><em>what do you do?</em></div>
+  <p class="q-sub">Your <strong>automatic reaction</strong> reveals the exact pattern.</p>
+  <div class="q-quote">His silence is <strong>never neutral</strong>. And your response to it is where everything is decided.</div>
+  <div class="opts">
+    <button class="opt" onclick="pick(2,'a','Every extra message tells him: it’s okay to disappear, I’ll still be here. That’s what lowers his effort.')">
+      <span class="opt-ico">📱</span><span class="opt-text">I send another message “just to check”</span>
+    </button>
+    <button class="opt" onclick="pick(2,'b','Living in alert mode is exhausting — and he can feel that he has power over your emotional state.')">
+      <span class="opt-ico">🕐</span><span class="opt-text">I wait, but stay in full alert mode</span>
+    </button>
+    <button class="opt" onclick="pick(2,'c','Re-reading every word hands him control of your mind. Your head should be your territory.')">
+      <span class="opt-ico">🔍</span><span class="opt-text">I keep re-reading everything looking for signs</span>
+    </button>
+    <button class="opt" onclick="pick(2,'d','Even when you try to distract yourself, he’s still renting space in your head. That shows the real imbalance.')">
+      <span class="opt-ico">😮‍💨</span><span class="opt-text">I distract myself, but he still dominates my thoughts</span>
+    </button>
+  </div>
+  <div class="fb" id="fb2"></div>
+  <div class="nx" id="nx2"><button class="nx-btn" onclick="next(3)">Continue →</button></div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card" id="q3">
+  <div class="chip"><div class="cdot"></div>Right now</div>
+  <div class="q-title">Be honest…<br><em>are you still in it?</em></div>
+  <p class="q-sub">It doesn’t matter if you’re still with him or not.<br><strong>Is the pattern still active?</strong></p>
+  <div class="q-quote">You know what’s heavier than a breakup?<br><strong>Staying emotionally stuck to something that’s already gone.</strong></div>
+  <div class="opts">
+    <button class="opt" onclick="pick(3,'a','Being in the cycle right now isn’t weakness — it’s the clearest sign that this is the exact moment to flip the switch.')">
+      <span class="opt-ico">🔁</span><span class="opt-text">Yes, I’m right in this cycle now</span>
+    </button>
+    <button class="opt" onclick="pick(3,'b','He disappears and comes back. You keep waiting. As long as that doesn’t change, he’ll never have to truly choose you.')">
+      <span class="opt-ico">🕳️</span><span class="opt-text">Yes, he disappears and comes back… and I keep waiting</span>
+    </button>
+    <button class="opt" onclick="pick(3,'c','The relationship ended — but it didn’t end inside you. That’s not drama. That’s an active pattern.')">
+      <span class="opt-ico">💔</span><span class="opt-text">Yes, it ended… but emotionally I’m still stuck</span>
+    </button>
+    <button class="opt" onclick="pick(3,'d','When the same type keeps showing up, the common denominator isn’t bad luck — it’s the dynamic you carry.')">
+      <span class="opt-ico">🥀</span><span class="opt-text">Yes, even when single I attract the same type</span>
+    </button>
+  </div>
+  <div class="fb" id="fb3"></div>
+  <div class="nx" id="nx3"><button class="nx-btn" onclick="next(4)">Continue →</button></div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="q4">
+  <div class="chip"><div class="cdot"></div>The real cost</div>
+  <div class="q-title">What has this pattern<br><em>already cost you?</em></div>
+  <p class="q-sub">Forget him for a second.<br><strong>Look at what’s left inside you.</strong></p>
+  <div class="q-quote">There’s a kind of exhaustion that <strong>doesn’t come from work</strong>. It comes from loving more than you’re loved.</div>
+  <div class="opts">
+    <button class="opt" onclick="pick(4,'a','You give everything — and end up alone with the emotional bill. That imbalance isn’t a coincidence.')">
+      <span class="opt-ico">💔</span><span class="opt-text">I give too much and end up alone with the pain</span>
+    </button>
+    <button class="opt" onclick="pick(4,'b','Living in constant doubt isn’t who you are — it’s the result of a dynamic that puts you at a disadvantage.')">
+      <span class="opt-ico">🧠</span><span class="opt-text">I live in constant doubt and insecurity</span>
+    </button>
+    <button class="opt" onclick="pick(4,'c','Being afraid of “ruining it” means you’ve taken responsibility for the entire relationship. That’s not your job.')">
+      <span class="opt-ico">🕳️</span><span class="opt-text">Anxiety and fear of messing everything up</span>
+    </button>
+    <button class="opt" onclick="pick(4,'d','This exhaustion that only grows won’t go away on its own. It deepens while the pattern stays active.')">
+      <span class="opt-ico">🥀</span><span class="opt-text">An emotional exhaustion that only gets worse</span>
+    </button>
+  </div>
+  <div class="fb" id="fb4"></div>
+  <div class="nx" id="nx4"><button class="nx-btn" onclick="next(5)">Continue →</button></div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card" id="q5">
+  <div class="chip"><div class="cdot"></div>The choice</div>
+  <div class="q-title">If nothing changes…<br><em>do you believe it gets better on its own?</em></div>
+  <p class="q-sub">You’ve seen this movie before.<br><strong>And you know how it ends.</strong></p>
+  <div class="q-quote">The definition of insanity is <strong>doing the same thing</strong> and expecting a different result.</div>
+  <div class="opts">
+    <button class="opt" onclick="pick(5,'a',null)"><span class="opt-ico">❌</span><span class="opt-text">No. It always ends the same way</span></button>
+    <button class="opt" onclick="pick(5,'b',null)"><span class="opt-ico">😔</span><span class="opt-text">I want to believe… but deep down I know it doesn’t</span></button>
+    <button class="opt" onclick="pick(5,'c',null)"><span class="opt-ico">😮‍💨</span><span class="opt-text">No. And this cycle is already destroying me</span></button>
+    <button class="opt" onclick="pick(5,'d',null)"><span class="opt-ico">🔁</span><span class="opt-text">No. Only the man changes — the ending never does</span></button>
+  </div>
+  <div class="fb" id="fb5"></div>
+  <div class="nx" id="nx5"><button class="nx-btn" onclick="goLoading()">See my diagnosis →</button></div>
+</div>
+
+<div id="loading">
+  <div class="load-ico">🔓</div>
+  <div class="load-title">Your pattern<br><em>has been identified.</em></div>
+  <p class="load-sub">Processing your answers and generating your personalized diagnosis…</p>
+  <div class="an-box">
+    <div class="an-lbl" id="anLbl">Processing answers</div>
+    <div class="an-track"><div class="an-fill" id="anFill"></div></div>
+    <div class="an-txt" id="anTxt">Identifying emotional dynamic…</div>
+  </div>
+</div>
+</div>
+
+<script>
+let cur = 1;
+let answers = {};
+
+function pick(q, opt, fb){
+  answers['q'+q] = opt;
+  const card = document.getElementById('q'+q);
+  card.querySelectorAll('.opt').forEach(b => b.classList.remove('sel'));
+  event.currentTarget.classList.add('sel');
+  if(fb){
+    const el = document.getElementById('fb'+q);
+    el.innerHTML = fb;
+    el.classList.add('on');
+  }
+  document.getElementById('nx'+q).classList.add('on');
+}
+
+function next(nq){
+  const prev = document.getElementById('q'+(nq-1));
+  prev.classList.add('out');
+  setTimeout(()=>{
+    prev.classList.remove('on','out');
+    prev.style.display = 'none';
+    const c = document.getElementById('q'+nq);
+    c.style.display = 'flex';
+    c.classList.add('on');
+    cur = nq;
+    document.getElementById('pFill').style.width = (cur/5*100)+'%';
+    document.getElementById('pCount').textContent = 'Step '+cur+' of 5';
+    window.scrollTo({top:0,behavior:'smooth'});
+  },240);
+}
+
+function goLoading(){
+  document.getElementById('q5').style.display = 'none';
+  document.getElementById('prog').style.display = 'none';
+  const ld = document.getElementById('loading');
+  ld.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+  const steps = [
+    {lbl:'Processing answers', txt:'Identifying emotional dynamic…', w:20},
+    {lbl:'Mapping the pattern', txt:'Analyzing cycle history…', w:45},
+    {lbl:'Cross-referencing data', txt:'Calculating investment level…', w:68},
+    {lbl:'Analyzing real cost', txt:'Mapping accumulated emotional impact…', w:86},
+    {lbl:'Diagnosis ready', txt:'Generating personalized result…', w:100},
+  ];
+  const fill = document.getElementById('anFill');
+  const lbl = document.getElementById('anLbl');
+  const txt = document.getElementById('anTxt');
+  let i = 0;
+  function run(){
+    if(i >= steps.length){
+      setTimeout(()=>{
+        try{ localStorage.setItem('quizAnswers', JSON.stringify(answers)); }catch(e){}
+        window.location.href = 'quiz3.html';
+      }, 400);
+      return;
+    }
+    const s = steps[i++];
+    fill.style.width = s.w+'%';
+    lbl.textContent = s.lbl;
+    txt.textContent = s.txt;
+    setTimeout(run, 640);
+  }
+  setTimeout(run, 450);
+}
+</script>
+</body>
+</html>
