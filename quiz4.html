@@ -11,7 +11,6 @@
 body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);line-height:1.55;padding-bottom:60px}
 .container{max-width:460px;margin:0 auto;padding:0 18px}
 
-/* SCARCITY BAR */
 .scarcity-bar{
   position:fixed;top:0;left:0;right:0;z-index:100;
   background:linear-gradient(90deg,#6B001C,#C8003F);
@@ -21,7 +20,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 }
 .scarcity-bar span{font-weight:800;color:#FFE0EB}
 
-/* HERO */
 .hero{padding:58px 0 10px;text-align:center}
 .hero-badge{
   display:inline-flex;align-items:center;gap:6px;
@@ -35,7 +33,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 
 .product-img{width:100%;border-radius:18px;margin:22px 0 8px;border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 40px rgba(200,0,63,.18)}
 
-/* SOCIAL PROOF STRIP */
 .proof-strip{margin:28px 0 10px}
 .proof-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:12px;font-weight:600}
 .proof-scroll{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -18px;padding-left:18px;padding-right:18px;-webkit-overflow-scrolling:touch}
@@ -43,7 +40,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 .proof-item{flex:0 0 78%;scroll-snap-align:center}
 .proof-item img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08);display:block}
 
-/* CORE PROMISE */
 .core-promise{
   background:linear-gradient(135deg,rgba(200,0,63,.11),rgba(255,45,107,.05));
   border:1px solid rgba(200,0,63,.28);
@@ -51,7 +47,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 }
 .core-promise strong{color:#fff}
 
-/* SECTIONS */
 .section{margin:36px 0}
 .section-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px;line-height:1.2}
 .section-title em{color:var(--hot);font-style:italic}
@@ -61,14 +56,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 .mechanism h3{font-size:15px;font-weight:600;margin-bottom:5px;color:#fff}
 .mechanism p{font-size:13.8px;color:var(--soft);font-weight:300;line-height:1.5}
 
-/* BONUSES */
 .bonus-grid{display:flex;flex-direction:column;gap:10px}
 .bonus{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.025);border:1px solid rgba(255,45,107,.13);border-radius:14px;padding:14px 14px}
 .bonus-ico{font-size:19px;flex-shrink:0;margin-top:1px}
 .bonus h4{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:3px}
 .bonus p{font-size:13.3px;color:var(--soft);font-weight:300;line-height:1.4}
+.bonus-value{font-size:12px;color:var(--hot);font-weight:600;margin-top:4px}
 
-/* PRICE */
 .price-box{
   background:linear-gradient(145deg,rgba(200,0,63,.18),rgba(255,45,107,.07));
   border:1.5px solid rgba(200,0,63,.4);
@@ -76,25 +70,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
   position:relative;overflow:hidden;
 }
 .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--hot),transparent)}
-.price-old{font-size:14px;color:rgba(255,255,255,.4);text-decoration:line-through;margin-bottom:2px}
+.price-old{font-size:15px;color:rgba(255,255,255,.45);text-decoration:line-through;margin-bottom:4px}
+.price-anchor{font-size:14px;color:var(--soft);margin-bottom:6px}
 .price-new{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:#fff;line-height:1;margin:6px 0}
 .price-new small{font-size:24px;color:var(--hot)}
 .price-note{font-size:13.5px;color:var(--soft);margin-top:6px}
 .price-spots{margin-top:12px;font-size:13px;color:var(--hot);font-weight:600}
 
-/* GUARANTEE */
 .guarantee{text-align:center;margin:26px 0}
 .guarantee img{width:160px;margin:0 auto 12px;display:block}
 .guarantee h3{font-size:16.5px;font-weight:700;margin-bottom:8px}
 .guarantee p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5;max-width:340px;margin:0 auto}
 
-/* WARNING */
 .warning{
   background:rgba(200,0,63,.1);border-left:3px solid var(--hot);
   padding:15px 16px;margin:24px 0;font-size:14.5px;color:rgba(255,210,225,.92);line-height:1.55;
 }
 
-/* CTA */
 .cta{
   display:block;width:100%;
   background:linear-gradient(135deg,var(--rose),var(--hot));
@@ -108,11 +100,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 @keyframes shine{to{transform:translateX(100%)}}
 .cta-sub{text-align:center;font-size:12.5px;color:var(--muted);margin-bottom:20px}
 
-/* PAYMENT */
 .payment{text-align:center;margin:18px 0 10px}
 .payment img{max-width:280px;width:100%;opacity:.85}
 
-/* FAQ ACCORDION */
 .faq{margin:40px 0 24px}
 .faq h3{font-family:'Playfair Display',serif;font-size:22px;text-align:center;margin-bottom:20px}
 .faq-item{border:1px solid rgba(255,45,107,.14);border-radius:14px;margin-bottom:10px;overflow:hidden;background:rgba(255,255,255,.02)}
@@ -128,12 +118,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 .faq-item.open .faq-a{max-height:200px;padding:0 18px 16px}
 
 .final{text-align:center;font-size:15px;color:rgba(255,200,220,.78);margin:32px 0 12px;line-height:1.55;font-style:italic}
+
+.value-stack{background:rgba(255,255,255,.03);border:1px solid rgba(255,45,107,.15);border-radius:16px;padding:18px 16px;margin:20px 0}
+.value-row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.value-row:last-child{border-bottom:none;font-weight:700;color:#fff;padding-top:10px}
+.value-row span:last-child{color:var(--hot)}
 </style>
 </head>
 <body>
 
 <div class="scarcity-bar">
-  ⏳ Price increases in <span id="timer">09:47</span> — only <span id="spots">11</span> spots left at $27
+  ⏳ Price increases in <span id="timer">09:47</span> — only <span id="spots">9</span> spots left at $19.90
 </div>
 
 <div class="container">
@@ -151,11 +146,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
     <div class="proof-label">Real results from women who stopped over-investing</div>
     <div class="proof-scroll">
       <div class="proof-item"><img src="src/img/1.PNG" alt="Testimonial"></div>
-      <div class="proof-item"><img src="src/img/2.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/2.png" alt="Testimonial"></div>
       <div class="proof-item"><img src="src/img/3.PNG" alt="Testimonial"></div>
-      <div class="proof-item"><img src="src/img/4.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/4.png" alt="Testimonial"></div>
       <div class="proof-item"><img src="src/img/5.PNG" alt="Testimonial"></div>
-      <div class="proof-item"><img src="src/img/6.PNG" alt="Testimonial"></div>
       <div class="proof-item"><img src="src/img/7.PNG" alt="Testimonial"></div>
     </div>
   </div>
@@ -185,14 +179,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 
   <div class="section">
     <h2 class="section-title">Everything you get today</h2>
-    <p class="section-sub">The complete system to reverse the pattern — without becoming cold or manipulative.</p>
+    <p class="section-sub">This is not a single guide. You’re getting the complete system + every bonus below.</p>
 
     <div class="bonus-grid">
       <div class="bonus">
         <div class="bonus-ico">🔓</div>
         <div>
-          <h4>The Chosen Frame Method</h4>
-          <p>The core system to stop over-giving and create natural desire + prioritization.</p>
+          <h4>The Chosen Frame Method (Core Program)</h4>
+          <p>The complete system to stop over-giving and create natural desire + prioritization.</p>
+          <div class="bonus-value">Value: $97</div>
         </div>
       </div>
       <div class="bonus">
@@ -200,6 +195,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
         <div>
           <h4>Texting Without Chasing</h4>
           <p>Exact message frameworks so you never over-text or seem needy again.</p>
+          <div class="bonus-value">Value: $47</div>
         </div>
       </div>
       <div class="bonus">
@@ -207,6 +203,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
         <div>
           <h4>How to Read His Real Interest</h4>
           <p>Spot the difference between genuine care and convenient attention — early.</p>
+          <div class="bonus-value">Value: $37</div>
         </div>
       </div>
       <div class="bonus">
@@ -214,6 +211,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
         <div>
           <h4>12 Polarity Shifts</h4>
           <p>Small, practical changes in energy and behavior that make him feel the pull toward you.</p>
+          <div class="bonus-value">Value: $47</div>
         </div>
       </div>
       <div class="bonus">
@@ -221,26 +219,56 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
         <div>
           <h4>The 8 Silent Desire Killers</h4>
           <p>The common behaviors that quietly push him away (and exactly how to stop them).</p>
+          <div class="bonus-value">Value: $37</div>
         </div>
       </div>
+      <div class="bonus">
+        <div class="bonus-ico">📱</div>
+        <div>
+          <h4>Emergency Text Scripts</h4>
+          <p>Ready-to-use replies for when he goes cold, pulls away, or tests you.</p>
+          <div class="bonus-value">Value: $27</div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">🪞</div>
+        <div>
+          <h4>Self-Worth Reset Audio</h4>
+          <p>A short guided audio to stop seeking validation and rebuild internal certainty.</p>
+          <div class="bonus-value">Value: $27</div>
+        </div>
+      </div>
+      <div class="bonus">
+        <div class="bonus-ico">🎯</div>
+        <div>
+          <h4>30-Day Implementation Plan</h4>
+          <p>Day-by-day actions so you don’t just learn — you actually apply and see results.</p>
+          <div class="bonus-value">Value: $37</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUE STACK -->
+    <div class="value-stack">
+      <div class="value-row"><span>Total Real Value</span><span>$356</span></div>
+      <div class="value-row"><span>Today you pay only</span><span>$19.90</span></div>
     </div>
   </div>
 
   <!-- PRICE -->
   <div class="price-box">
-    <div class="price-old">Private coaching normally $197–$297</div>
-    <div class="price-new">$27<small>.00</small></div>
+    <div class="price-old">Normal price: $97</div>
+    <div class="price-anchor">Private coaching version: $197–$297</div>
+    <div class="price-new">$19<small>.90</small></div>
     <div class="price-note">One-time payment · Instant access · No subscription</div>
-    <div class="price-spots">Only <span id="spots2">11</span> spots remaining at this price</div>
+    <div class="price-spots">Only <span id="spots2">9</span> spots remaining at this price</div>
   </div>
 
-  <!-- CTA 1 -->
   <a href="https://pay.hotmart.com/J102282162G" class="cta">
-    YES — I WANT TO STOP BEING THE OPTION
+    YES — GIVE ME EVERYTHING FOR $19.90
   </a>
   <p class="cta-sub">Instant access after payment · Offer ends when timer hits zero</p>
 
-  <!-- GUARANTEE -->
   <div class="guarantee">
     <img src="src/img/moneyback.png" alt="30-Day Money Back Guarantee">
     <h3>30-Day Full Money-Back Guarantee</h3>
@@ -253,18 +281,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
     And the gap between what you give and what you receive only grows.
   </div>
 
-  <!-- CTA 2 -->
   <a href="https://pay.hotmart.com/J102282162G" class="cta">
     I DON’T WANT TO KEEP GIVING MORE THAN I RECEIVE
   </a>
   <p class="cta-sub">This price and page can disappear at any moment</p>
 
-  <!-- PAYMENT -->
   <div class="payment">
     <img src="src/img/payment.png" alt="Secure payment methods">
   </div>
 
-  <!-- FAQ -->
   <div class="faq">
     <h3>Common Questions</h3>
 
@@ -309,9 +334,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
     </div>
   </div>
 
-  <!-- FINAL CTA -->
   <a href="https://pay.hotmart.com/J102282162G" class="cta">
-    GET INSTANT ACCESS NOW — $27
+    GET INSTANT ACCESS NOW — ONLY $19.90
   </a>
   <p class="cta-sub">One-time payment · 30-day guarantee · Instant delivery</p>
 
@@ -323,7 +347,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 </div>
 
 <script>
-// Timer
 let total = 9*60 + 47;
 function tick(){
   const m = Math.floor(total/60);
@@ -333,8 +356,7 @@ function tick(){
 }
 tick();
 
-// Spots
-let spots = 11;
+let spots = 9;
 setInterval(()=>{
   if(spots > 3 && Math.random() > 0.6){
     spots--;
@@ -343,15 +365,10 @@ setInterval(()=>{
   }
 }, 28000);
 
-// FAQ Accordion
 function toggleFaq(btn){
   const item = btn.parentElement;
   const isOpen = item.classList.contains('open');
-  
-  // Close all
   document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-  
-  // Open clicked if it was closed
   if(!isOpen) item.classList.add('open');
 }
 </script>
