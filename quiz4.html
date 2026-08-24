@@ -2,153 +2,176 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stop Being the Option</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>The Chosen Frame — Stop Being the Option</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--rose:#C8003F;--hot:#FF2D6B;--ink:#09060F;--text:#F7F0F3;--soft:rgba(247,240,243,.68)}
-body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);line-height:1.55;padding-bottom:50px}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--rose:#C8003F;--hot:#FF2D6B;--ink:#08050D;--text:#F8F1F4;--soft:rgba(248,241,244,.68);--muted:rgba(248,241,244,.38)}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);line-height:1.55;padding-bottom:60px}
 .container{max-width:460px;margin:0 auto;padding:0 18px}
 
+/* SCARCITY BAR */
 .scarcity-bar{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:linear-gradient(90deg,#7A001F,#C8003F);
-  color:#fff;text-align:center;padding:11px 14px;
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:linear-gradient(90deg,#6B001C,#C8003F);
+  color:#fff;text-align:center;padding:12px 14px;
   font-size:13.5px;font-weight:600;
-  box-shadow:0 4px 18px rgba(200,0,63,.35);
+  box-shadow:0 4px 24px rgba(200,0,63,.45);
 }
-.scarcity-bar span{font-weight:700}
+.scarcity-bar span{font-weight:800;color:#FFE0EB}
 
-.hero{padding:42px 0 8px;text-align:center}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,7vw,36px);font-weight:900;line-height:1.18;margin-bottom:14px}
+/* HERO */
+.hero{padding:58px 0 10px;text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,45,107,.12);border:1px solid rgba(255,45,107,.25);
+  border-radius:100px;padding:5px 14px;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--hot);font-weight:600;margin-bottom:18px;
+}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,7.5vw,38px);font-weight:900;line-height:1.15;margin-bottom:14px}
 .hero h1 em{color:var(--hot);font-style:italic}
-.hero p{font-size:15.5px;color:var(--soft);font-weight:300;max-width:340px;margin:0 auto}
+.hero p{font-size:15.5px;color:var(--soft);font-weight:300;max-width:340px;margin:0 auto 6px}
 
-.product-img{width:100%;border-radius:18px;margin:22px 0 6px;border:1px solid rgba(255,255,255,.07)}
+.product-img{width:100%;border-radius:18px;margin:22px 0 8px;border:1px solid rgba(255,255,255,.08);box-shadow:0 12px 40px rgba(200,0,63,.18)}
 
+/* SOCIAL PROOF STRIP */
+.proof-strip{margin:28px 0 10px}
+.proof-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:12px;font-weight:600}
+.proof-scroll{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -18px;padding-left:18px;padding-right:18px;-webkit-overflow-scrolling:touch}
+.proof-scroll::-webkit-scrollbar{display:none}
+.proof-item{flex:0 0 78%;scroll-snap-align:center}
+.proof-item img{width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08);display:block}
+
+/* CORE PROMISE */
 .core-promise{
-  background:rgba(200,0,63,.09);
-  border:1px solid rgba(200,0,63,.25);
-  border-radius:16px;
-  padding:18px 16px;
-  margin:20px 0 26px;
-  font-size:15px;
-  line-height:1.55;
+  background:linear-gradient(135deg,rgba(200,0,63,.11),rgba(255,45,107,.05));
+  border:1px solid rgba(200,0,63,.28);
+  border-radius:16px;padding:18px 16px;margin:24px 0;font-size:15px;line-height:1.6;
 }
 .core-promise strong{color:#fff}
 
-.section{margin:32px 0}
-.section-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;margin-bottom:6px;line-height:1.2}
+/* SECTIONS */
+.section{margin:36px 0}
+.section-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px;line-height:1.2}
 .section-title em{color:var(--hot);font-style:italic}
 .section-sub{font-size:14.5px;color:var(--soft);margin-bottom:18px}
 
-.mechanism{
-  background:#0E0A14;
-  border:1px solid rgba(255,45,107,.18);
-  border-radius:16px;
-  padding:18px 16px;
-  margin-bottom:14px;
-}
-.mechanism h3{font-size:15.5px;font-weight:600;margin-bottom:6px;color:#fff}
-.mechanism p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+.mechanism{background:#0D0914;border:1px solid rgba(255,45,107,.16);border-radius:14px;padding:16px 15px;margin-bottom:12px}
+.mechanism h3{font-size:15px;font-weight:600;margin-bottom:5px;color:#fff}
+.mechanism p{font-size:13.8px;color:var(--soft);font-weight:300;line-height:1.5}
 
-.bonus-grid{display:flex;flex-direction:column;gap:11px}
-.bonus{
-  display:flex;gap:13px;align-items:flex-start;
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(255,45,107,.12);
-  border-radius:14px;padding:15px 15px;
-}
-.bonus-ico{font-size:20px;flex-shrink:0;margin-top:1px}
+/* BONUSES */
+.bonus-grid{display:flex;flex-direction:column;gap:10px}
+.bonus{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.025);border:1px solid rgba(255,45,107,.13);border-radius:14px;padding:14px 14px}
+.bonus-ico{font-size:19px;flex-shrink:0;margin-top:1px}
 .bonus h4{font-size:14.5px;font-weight:600;color:#fff;margin-bottom:3px}
-.bonus p{font-size:13.5px;color:var(--soft);font-weight:300;line-height:1.4}
+.bonus p{font-size:13.3px;color:var(--soft);font-weight:300;line-height:1.4}
 
+/* PRICE */
 .price-box{
-  background:linear-gradient(145deg,rgba(200,0,63,.16),rgba(255,45,107,.07));
-  border:1.5px solid rgba(200,0,63,.38);
-  border-radius:20px;
-  padding:26px 20px;
-  text-align:center;
-  margin:30px 0 22px;
+  background:linear-gradient(145deg,rgba(200,0,63,.18),rgba(255,45,107,.07));
+  border:1.5px solid rgba(200,0,63,.4);
+  border-radius:20px;padding:26px 18px;text-align:center;margin:32px 0 18px;
+  position:relative;overflow:hidden;
 }
+.price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--hot),transparent)}
 .price-old{font-size:14px;color:rgba(255,255,255,.4);text-decoration:line-through;margin-bottom:2px}
-.price-new{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:#fff;line-height:1;margin:4px 0}
-.price-new small{font-size:22px;color:var(--hot)}
+.price-new{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:#fff;line-height:1;margin:6px 0}
+.price-new small{font-size:24px;color:var(--hot)}
 .price-note{font-size:13.5px;color:var(--soft);margin-top:6px}
+.price-spots{margin-top:12px;font-size:13px;color:var(--hot);font-weight:600}
 
-.guarantee{
-  text-align:center;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:20px 18px;
-  margin:22px 0;
-}
-.guarantee h3{font-size:16px;font-weight:700;margin-bottom:8px}
-.guarantee p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+/* GUARANTEE */
+.guarantee{text-align:center;margin:26px 0}
+.guarantee img{width:160px;margin:0 auto 12px;display:block}
+.guarantee h3{font-size:16.5px;font-weight:700;margin-bottom:8px}
+.guarantee p{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5;max-width:340px;margin:0 auto}
 
+/* WARNING */
 .warning{
-  background:rgba(200,0,63,.1);
-  border-left:3px solid var(--hot);
-  padding:15px 16px;
-  margin:24px 0;
-  font-size:14.5px;
-  color:rgba(255,210,225,.9);
-  line-height:1.5;
+  background:rgba(200,0,63,.1);border-left:3px solid var(--hot);
+  padding:15px 16px;margin:24px 0;font-size:14.5px;color:rgba(255,210,225,.92);line-height:1.55;
 }
 
+/* CTA */
 .cta{
   display:block;width:100%;
   background:linear-gradient(135deg,var(--rose),var(--hot));
   color:#fff;text-align:center;text-decoration:none;
-  font-size:16.5px;font-weight:800;letter-spacing:.2px;
+  font-size:16.5px;font-weight:800;letter-spacing:.3px;
   padding:20px 20px;border-radius:100px;
-  box-shadow:0 10px 32px rgba(200,0,63,.4);
-  margin:8px 0 6px;
-  position:relative;overflow:hidden;
+  box-shadow:0 10px 36px rgba(200,0,63,.45);
+  margin:10px 0 6px;position:relative;overflow:hidden;
 }
-.cta::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shine 2.1s infinite}
+.cta::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-100%);animation:shine 2s infinite}
 @keyframes shine{to{transform:translateX(100%)}}
-.cta-sub{text-align:center;font-size:12.5px;color:rgba(255,255,255,.38);margin-bottom:18px}
+.cta-sub{text-align:center;font-size:12.5px;color:var(--muted);margin-bottom:20px}
 
-.faq{margin:36px 0 20px}
-.faq h3{font-family:'Playfair Display',serif;font-size:21px;text-align:center;margin-bottom:18px}
-.faq-item{margin-bottom:16px}
-.faq-q{font-size:15px;font-weight:600;color:#fff;margin-bottom:4px}
-.faq-a{font-size:14px;color:var(--soft);font-weight:300;line-height:1.5}
+/* PAYMENT */
+.payment{text-align:center;margin:18px 0 10px}
+.payment img{max-width:280px;width:100%;opacity:.85}
 
-.final{text-align:center;font-size:15px;color:rgba(255,200,220,.75);margin:28px 0 10px;line-height:1.55;font-style:italic}
+/* FAQ ACCORDION */
+.faq{margin:40px 0 24px}
+.faq h3{font-family:'Playfair Display',serif;font-size:22px;text-align:center;margin-bottom:20px}
+.faq-item{border:1px solid rgba(255,45,107,.14);border-radius:14px;margin-bottom:10px;overflow:hidden;background:rgba(255,255,255,.02)}
+.faq-q{
+  width:100%;background:none;border:none;color:#fff;font-family:'DM Sans',sans-serif;
+  font-size:14.8px;font-weight:600;text-align:left;padding:16px 18px;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq-q span{flex:1}
+.faq-q .arrow{font-size:18px;color:var(--hot);transition:transform .3s ease}
+.faq-item.open .arrow{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;font-size:14px;color:var(--soft);font-weight:300;line-height:1.55;padding:0 18px}
+.faq-item.open .faq-a{max-height:200px;padding:0 18px 16px}
+
+.final{text-align:center;font-size:15px;color:rgba(255,200,220,.78);margin:32px 0 12px;line-height:1.55;font-style:italic}
 </style>
 </head>
 <body>
 
 <div class="scarcity-bar">
-  ⏳ Special price ends in <span id="timer">11:42</span> — only <span id="spots">14</span> left
+  ⏳ Price increases in <span id="timer">09:47</span> — only <span id="spots">11</span> spots left at $27
 </div>
 
 <div class="container">
 
   <div class="hero">
-    <h1>You’ve been giving more<br>than you receive.<br><em>That ends now.</em></h1>
-    <p>This isn’t another “be more feminine” course.<br>It’s the exact shift that stops him from treating you like an option.</p>
+    <div class="hero-badge">Limited offer</div>
+    <h1>You’ve been giving more<br>than you receive.<br><em>That ends today.</em></h1>
+    <p>This is the exact shift that stops him from treating you like an option — without becoming cold or playing games.</p>
   </div>
 
-  <img src="src/img/curso.png" alt="The Chosen Frame" class="product-img">
+  <img src="src/img/capaproduto.png" alt="The Chosen Frame" class="product-img">
+
+  <!-- SOCIAL PROOF -->
+  <div class="proof-strip">
+    <div class="proof-label">Real results from women who stopped over-investing</div>
+    <div class="proof-scroll">
+      <div class="proof-item"><img src="src/img/1.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/2.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/3.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/4.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/5.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/6.PNG" alt="Testimonial"></div>
+      <div class="proof-item"><img src="src/img/7.PNG" alt="Testimonial"></div>
+    </div>
+  </div>
 
   <div class="core-promise">
-    Most women try to fix the relationship by giving <strong>more</strong>.<br><br>
-    This method does the opposite: it teaches you how to stop over-investing so he finally feels the need to invest in <strong>you</strong>.
+    Most women try to fix things by giving <strong>more</strong>.<br><br>
+    This method does the opposite: it shows you how to stop over-investing so he finally feels the need to invest in <strong>you</strong>.
   </div>
 
   <div class="section">
-    <h2 class="section-title">Why this works when<br><em>“just pull back”</em> doesn’t</h2>
-    <p class="section-sub">Simply going silent or playing hard to get usually backfires. Here’s what actually creates the shift:</p>
+    <h2 class="section-title">Why “just pull back”<br><em>usually fails</em></h2>
+    <p class="section-sub">Going silent or playing hard to get often backfires. Here’s what actually creates the lasting shift:</p>
 
     <div class="mechanism">
       <h3>1. The Over-Investment Loop</h3>
-      <p>You give attention, energy, and emotional availability before he has fully chosen you. This removes the natural tension that makes him pursue.</p>
+      <p>You give attention and emotional energy before he has fully chosen you. This removes the natural tension that makes him pursue.</p>
     </div>
     <div class="mechanism">
       <h3>2. The Emotional Cost Reset</h3>
@@ -161,15 +184,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
   </div>
 
   <div class="section">
-    <h2 class="section-title">What you receive today</h2>
-    <p class="section-sub">Everything you need to reverse the pattern — without becoming cold or manipulative.</p>
+    <h2 class="section-title">Everything you get today</h2>
+    <p class="section-sub">The complete system to reverse the pattern — without becoming cold or manipulative.</p>
 
     <div class="bonus-grid">
       <div class="bonus">
         <div class="bonus-ico">🔓</div>
         <div>
           <h4>The Chosen Frame Method</h4>
-          <p>The core system to stop over-giving and create natural desire and prioritization.</p>
+          <p>The core system to stop over-giving and create natural desire + prioritization.</p>
         </div>
       </div>
       <div class="bonus">
@@ -197,21 +220,31 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
         <div class="bonus-ico">🛡️</div>
         <div>
           <h4>The 8 Silent Desire Killers</h4>
-          <p>The common behaviors that quietly push him away (and how to stop them).</p>
+          <p>The common behaviors that quietly push him away (and exactly how to stop them).</p>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- PRICE -->
   <div class="price-box">
-    <div class="price-old">Private coaching normally costs $197–$297</div>
+    <div class="price-old">Private coaching normally $197–$297</div>
     <div class="price-new">$27<small>.00</small></div>
     <div class="price-note">One-time payment · Instant access · No subscription</div>
+    <div class="price-spots">Only <span id="spots2">11</span> spots remaining at this price</div>
   </div>
 
+  <!-- CTA 1 -->
+  <a href="https://pay.hotmart.com/J102282162G" class="cta">
+    YES — I WANT TO STOP BEING THE OPTION
+  </a>
+  <p class="cta-sub">Instant access after payment · Offer ends when timer hits zero</p>
+
+  <!-- GUARANTEE -->
   <div class="guarantee">
-    <h3>✅ 30-Day No-Risk Guarantee</h3>
-    <p>Apply the method. If you don’t feel a clear difference in how he responds (or in how you feel about yourself), just email us and get a full refund. No questions asked.</p>
+    <img src="src/img/moneyback.png" alt="30-Day Money Back Guarantee">
+    <h3>30-Day Full Money-Back Guarantee</h3>
+    <p>Apply the method. If you don’t feel a clear difference in how he responds (or in how you feel), just email us and get every cent back. No questions asked.</p>
   </div>
 
   <div class="warning">
@@ -220,39 +253,67 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
     And the gap between what you give and what you receive only grows.
   </div>
 
+  <!-- CTA 2 -->
   <a href="https://pay.hotmart.com/J102282162G" class="cta">
-    YES — I WANT TO STOP BEING THE OPTION
+    I DON’T WANT TO KEEP GIVING MORE THAN I RECEIVE
   </a>
-  <p class="cta-sub">Instant access after payment · Price can disappear when the timer hits zero</p>
+  <p class="cta-sub">This price and page can disappear at any moment</p>
 
+  <!-- PAYMENT -->
+  <div class="payment">
+    <img src="src/img/payment.png" alt="Secure payment methods">
+  </div>
+
+  <!-- FAQ -->
   <div class="faq">
     <h3>Common Questions</h3>
 
     <div class="faq-item">
-      <div class="faq-q">Will this work if we’re already together?</div>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Will this work if we’re already together?</span>
+        <div class="arrow">+</div>
+      </button>
       <div class="faq-a">Yes. The method works whether you’re dating, in a relationship, or dealing with distance and inconsistency.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Is this about playing games or manipulation?</div>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Is this about playing games or manipulation?</span>
+        <div class="arrow">+</div>
+      </button>
       <div class="faq-a">No. It’s about stopping the behaviors that make him take you for granted and rebuilding healthy polarity and self-respect.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">How fast do I get access?</div>
-      <div class="faq-a">Immediately after payment. You’ll receive everything by email within a couple of minutes.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How fast do I get access?</span>
+        <div class="arrow">+</div>
+      </button>
+      <div class="faq-a">Immediately after payment. You’ll receive everything by email within 1–2 minutes.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">What if it doesn’t work for me?</div>
-      <div class="faq-a">You have 30 full days. If you’re not satisfied, we refund you completely.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What if it doesn’t work for me?</span>
+        <div class="arrow">+</div>
+      </button>
+      <div class="faq-a">You have 30 full days. If you’re not satisfied, we refund you completely — no questions asked.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Is the payment secure?</span>
+        <div class="arrow">+</div>
+      </button>
+      <div class="faq-a">Yes. All payments are processed through a professional platform with bank-level encryption.</div>
     </div>
   </div>
 
+  <!-- FINAL CTA -->
   <a href="https://pay.hotmart.com/J102282162G" class="cta">
-    I DON’T WANT TO KEEP GIVING MORE THAN I RECEIVE
+    GET INSTANT ACCESS NOW — $27
   </a>
-  <p class="cta-sub">This offer is limited and can end at any moment</p>
+  <p class="cta-sub">One-time payment · 30-day guarantee · Instant delivery</p>
 
   <p class="final">
     You already know the pattern exists.<br>
@@ -262,23 +323,37 @@ body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--text);li
 </div>
 
 <script>
-let total = 11*60 + 42;
+// Timer
+let total = 9*60 + 47;
 function tick(){
   const m = Math.floor(total/60);
   const s = total%60;
-  document.getElementById('timer').textContent = 
-    m.toString().padStart(2,'0') + ':' + s.toString().padStart(2,'0');
+  document.getElementById('timer').textContent = m.toString().padStart(2,'0') + ':' + s.toString().padStart(2,'0');
   if(total>0){total--; setTimeout(tick,1000);}
 }
 tick();
 
-let spots = 14;
+// Spots
+let spots = 11;
 setInterval(()=>{
-  if(spots > 4 && Math.random() > 0.65){
+  if(spots > 3 && Math.random() > 0.6){
     spots--;
     document.getElementById('spots').textContent = spots;
+    document.getElementById('spots2').textContent = spots;
   }
-}, 32000);
+}, 28000);
+
+// FAQ Accordion
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+  
+  // Open clicked if it was closed
+  if(!isOpen) item.classList.add('open');
+}
 </script>
 </body>
 </html>
